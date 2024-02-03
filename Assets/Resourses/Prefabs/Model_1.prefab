@@ -562,7 +562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4763899328562670808}
   m_Layer: 0
-  m_Name: ScifiCar_Prefab
+  m_Name: Model_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
