@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 16dbbb7baf308204fad6d8ad681f3994
+guid: d71e954afe348fe42a40a1b334599ad0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -66,8 +66,8 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
-    resizeAlgorithm: 1
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Background_0
+      name: cars-preview_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2048
-        height: 1152
+        x: 2
+        y: 3
+        width: 72
+        height: 122
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,8 +118,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87bbe753339322441ba49df5541ab516
-      internalID: 1141618627
+      spriteID: 7b3b11c069ddcfa4a8a060e2cc7652fc
+      internalID: -1479434917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cars-preview_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 3
+        width: 72
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99314bda07bf71949ba72d7ccaef9d76
+      internalID: 5348164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cars-preview_2
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 3
+        width: 72
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6659b4e162509de45bc8adda999f2422
+      internalID: 10807584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cars-preview_3
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 3
+        width: 72
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4572b070dc8efaf4eb0924e403cb14bf
+      internalID: 1439275007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cars-preview_4
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 3
+        width: 72
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f57d5f359284e6408ba75941f4093d3
+      internalID: 1953748799
       vertices: []
       indices: 
       edges: []
@@ -127,15 +211,19 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 8f0d26b1133599042898187b1a7ed4c4
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Background_0: 1141618627
+      cars-preview_4: 1953748799
+      cars-preview_1: 5348164
+      cars-preview_2: 10807584
+      cars-preview_3: 1439275007
+      cars-preview_0: -1479434917
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
