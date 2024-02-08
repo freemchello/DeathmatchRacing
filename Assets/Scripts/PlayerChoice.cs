@@ -17,7 +17,7 @@ public class PlayerChoice : MonoBehaviourPunCallbacks
     public GameObject rightArrowButton;
 
     ExitGames.Client.Photon.Hashtable playerProperties = new ExitGames.Client.Photon.Hashtable();
-    public Image playerAvatar;
+    public Image playerCars;
     public Sprite[] avatars;
 
     Player player;
@@ -43,26 +43,26 @@ public class PlayerChoice : MonoBehaviourPunCallbacks
 
     public void OnClickLeftArrow()
     {
-        if((int)playerProperties["playerAvatar"] == 0)
+        if((int)playerProperties["playerCars"] == 0)
         {
-            playerProperties["playerAvatar"] = avatars.Length - 1;
+            playerProperties["playerCars"] = avatars.Length - 1;
         }
         else
         {
-            playerProperties["playerAvatar"] = (int)playerProperties["playerAvatar"] - 1;
+            playerProperties["playerCars"] = (int)playerProperties["playerCars"] - 1;
         }
         PhotonNetwork.SetPlayerCustomProperties(playerProperties);
     }
 
     public void OnClickRightArrow()
     {
-        if ((int)playerProperties["playerAvatar"] == avatars.Length - 1)
+        if ((int)playerProperties["playerCars"] == avatars.Length - 1)
         {
-            playerProperties["playerAvatar"] = 0;
+            playerProperties["playerCars"] = 0;
         }
         else
         {
-            playerProperties["playerAvatar"] = (int)playerProperties["playerAvatar"] + 1;
+            playerProperties["playerCars"] = (int)playerProperties["playerCars"] + 1;
         }
         PhotonNetwork.SetPlayerCustomProperties(playerProperties);
     }
@@ -77,14 +77,14 @@ public class PlayerChoice : MonoBehaviourPunCallbacks
 
     void UpdatePlayerChoice(Player targetPlayer)
     {
-        if (player.CustomProperties.ContainsKey("playerAvatar"))
+        if (player.CustomProperties.ContainsKey("playerCars"))
         {
-            playerAvatar.sprite = avatars[(int)player.CustomProperties["playerAvatar"]];
-            playerProperties["playerAvatar"] = (int)player.CustomProperties["playerAvatar"];
+            playerCars.sprite = avatars[(int)player.CustomProperties["playerCars"]];
+            playerProperties["playerCars"] = (int)player.CustomProperties["playerCars"];
         }
         else
         {
-            playerProperties["playerAvater"] = 0;
+            playerProperties["playerCars"] = 0;
         }
     }
 }

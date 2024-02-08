@@ -24,9 +24,23 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public PlayerChoice PlayerChoicePrefab;
     public Transform playerChoiceParent;
 
+    public GameObject playButton;
+
     private void Start()
     {
         PhotonNetwork.JoinLobby();
+    }
+
+    private void Update()
+    {
+        if(PhotonNetwork.IsMasterClient &&  PhotonNetwork.CurrentRoom.PlayerCount >= 2)
+        {
+            playButton.SetActive(true);
+        }
+        else
+        {
+            playButton.SetActive(false);
+        }
     }
 
     public void CreateRoom()
@@ -134,5 +148,10 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         UpdatePlayerList();
+    }
+
+    public void OnClickPlayButton()
+    {
+        PhotonNetwork.LoadLevel("Game");
     }
 }

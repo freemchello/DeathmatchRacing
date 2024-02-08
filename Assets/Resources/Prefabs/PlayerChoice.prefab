@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 3001579139789922631}
   - component: {fileID: 3001579139789922680}
   m_Layer: 5
-  m_Name: PlayerCar
+  m_Name: PlayerCars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -336,13 +336,13 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -1479434917, guid: d71e954afe348fe42a40a1b334599ad0, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
-  m_UseSpriteMesh: 0
+  m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
 --- !u!1 &3001579139832758992
 GameObject:
@@ -534,7 +534,7 @@ MonoBehaviour:
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   leftArrowButton: {fileID: 3001579139769953481}
   rightArrowButton: {fileID: 3001579139832758992}
-  playerAvatar: {fileID: 3001579139789922680}
+  playerCars: {fileID: 3001579139789922680}
   avatars:
   - {fileID: -1479434917, guid: d71e954afe348fe42a40a1b334599ad0, type: 3}
   - {fileID: 5348164, guid: d71e954afe348fe42a40a1b334599ad0, type: 3}

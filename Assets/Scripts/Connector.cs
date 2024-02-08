@@ -13,6 +13,7 @@ using System;
 public class Connector : MonoBehaviourPunCallbacks
 {
     [SerializeField] private TMP_InputField usernameInput;
+    [SerializeField] private TMP_InputField passwordInput;
     [SerializeField] private TMP_Text buttonText;
 
     private const string AuthGuidKey = "1593578264";
@@ -20,10 +21,13 @@ public class Connector : MonoBehaviourPunCallbacks
     public UnityEvent OnSuccessEvent;
     public UnityEvent OnFailureEvent;
 
+    private bool isLogIn;
+
     private void Start()
     {
         var needCreation = PlayerPrefs.HasKey(AuthGuidKey);
         var id = PlayerPrefs.GetString(AuthGuidKey, Guid.NewGuid().ToString());
+
         var request = new LoginWithCustomIDRequest
         {
             CustomId = id,
@@ -51,6 +55,7 @@ public class Connector : MonoBehaviourPunCallbacks
 
             PhotonNetwork.NickName = usernameInput.text;
             buttonText.text = "Подключение...";
+            PhotonNetwork.AutomaticallySyncScene = true;
             PhotonNetwork.ConnectUsingSettings();
             PhotonNetwork.GameVersion = PhotonNetwork.AppVersion;
         }
@@ -60,7 +65,13 @@ public class Connector : MonoBehaviourPunCallbacks
     {
         base.OnDisconnected(cause);
         OnFailureEvent.Invoke();
-        Debug.Log("Disconnect");
+        Debug.Log("Отключен");
+    }
+    private void OnLoginError(PlayFabError error)
+    {
+        var errorMessage = error.GenerateErrorReport();
+        Debug.LogError(errorMessage);
+        OnFailureEvent.Invoke();
     }
 
     public override void OnConnectedToMaster()
