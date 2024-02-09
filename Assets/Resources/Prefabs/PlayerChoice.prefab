@@ -334,7 +334,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1479434917, guid: d71e954afe348fe42a40a1b334599ad0, type: 3}
+  m_Sprite: {fileID: 5348164, guid: d71e954afe348fe42a40a1b334599ad0, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -536,6 +536,5 @@ MonoBehaviour:
   rightArrowButton: {fileID: 3001579139832758992}
   playerCars: {fileID: 3001579139789922680}
   avatars:
-  - {fileID: -1479434917, guid: d71e954afe348fe42a40a1b334599ad0, type: 3}
-  - {fileID: 5348164, guid: d71e954afe348fe42a40a1b334599ad0, type: 3}
   - {fileID: 10807584, guid: d71e954afe348fe42a40a1b334599ad0, type: 3}
+  - {fileID: 5348164, guid: d71e954afe348fe42a40a1b334599ad0, type: 3}

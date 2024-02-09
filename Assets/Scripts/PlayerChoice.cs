@@ -26,6 +26,26 @@ public class PlayerChoice : MonoBehaviourPunCallbacks
     //{
     //    blackgroundImage = GetComponent<Image>();
     //}
+    private void Start()
+    {
+        playerProperties = PhotonNetwork.LocalPlayer.CustomProperties;
+
+        if (!playerProperties.ContainsKey("playerCars"))
+        {
+            playerProperties["playerCars"] = 0;
+            PhotonNetwork.SetPlayerCustomProperties(playerProperties);
+            UpdatePlayerCarImage();
+        }
+    }
+
+    private void UpdatePlayerCarImage()
+    {
+        if (playerProperties.ContainsKey("playerCar"))
+        {
+            int carIndex = (int)playerProperties["playerCar"];
+            playerCars.sprite = avatars[carIndex];
+        }
+    }
 
     public void SetPlayerInfo(Player _player)
     {
@@ -43,7 +63,7 @@ public class PlayerChoice : MonoBehaviourPunCallbacks
 
     public void OnClickLeftArrow()
     {
-        if((int)playerProperties["playerCars"] == 0)
+        if ((int)playerProperties["playerCars"] == 0)
         {
             playerProperties["playerCars"] = avatars.Length - 1;
         }
@@ -69,7 +89,7 @@ public class PlayerChoice : MonoBehaviourPunCallbacks
 
     public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
     {
-        if(player == targetPlayer)
+        if (player == targetPlayer)
         {
             UpdatePlayerChoice(targetPlayer);
         }
