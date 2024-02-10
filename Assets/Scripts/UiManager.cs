@@ -8,10 +8,10 @@ public class UiManager : MonoBehaviour
     [SerializeField] private Button _signInButton;
     [SerializeField] private Button _createAccountButton;
     [SerializeField] private Button _backToMenuButton;
-    [SerializeField] private Canvas _backToMenuCanvas;
-    [SerializeField] private Canvas _enterInGameCanvas;
-    [SerializeField] private Canvas _createAccountCanvas;
-    [SerializeField] private Canvas _signInCanvas;
+    [SerializeField] private Canvas _backToMenuPrefab;
+    [SerializeField] private Canvas _enterInGamePrefab;
+    [SerializeField] private Canvas _createAccountPrefab;
+    [SerializeField] private Canvas _signInPrefab;
 
     private void Start()
     {
@@ -22,26 +22,39 @@ public class UiManager : MonoBehaviour
 
     public void OpenSignInWindow()
     {
-        _createAccountCanvas.enabled = false;
-        _signInCanvas.enabled = true;
-        _enterInGameCanvas.enabled = false;
-        _backToMenuCanvas.enabled = false;
+        
+        _createAccountPrefab.enabled = (false);
+        _signInPrefab.enabled = (true);
+        _enterInGamePrefab.enabled = (false);
+        _backToMenuPrefab.enabled = (true);
 
+        //_createAccountPrefab.SetActive(false);
+        //_signInPrefab.SetActive(true);
+        //_enterInGamePrefab.SetActive(false);
+        //_backToMenuPrefab.SetActive(true);
     }
 
     public void OpenCreateAccountWindow()
     {
-        _createAccountCanvas.enabled = true;
-        _signInCanvas.enabled = false;
-        _enterInGameCanvas.enabled = false;
-        _backToMenuCanvas.enabled = true;
+        _createAccountPrefab.enabled = (true);
+        _signInPrefab.enabled = (false);
+        _enterInGamePrefab.enabled = (false);
+        _backToMenuPrefab.enabled = (true);
+        //_createAccountPrefab.SetActive(true);
+        //_signInPrefab.SetActive(false);
+        //_enterInGamePrefab.SetActive(false);
+        //_backToMenuPrefab.SetActive(true);
     }
 
     public void BackToMenu()
     {
-        _createAccountCanvas.enabled = false;
-        _signInCanvas.enabled = false;
-        _enterInGameCanvas.enabled = true;
-        _backToMenuCanvas.enabled = true;
+        _createAccountPrefab.enabled = (false);
+        _signInPrefab.enabled = (false);
+        _enterInGamePrefab.enabled = (true);
+        _backToMenuPrefab.enabled = (false);
+        //_createAccountPrefab.SetActive(false);
+        //_signInPrefab.SetActive(false);
+        //_enterInGamePrefab.SetActive(true);
+        //_backToMenuPrefab.SetActive(false);
     }
 }
