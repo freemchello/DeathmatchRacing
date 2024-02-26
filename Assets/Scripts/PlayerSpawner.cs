@@ -1,9 +1,10 @@
 using Photon.Pun;
 using UnityEngine;
 
-public class PlayerSpawner : MonoBehaviour
+public class PlayerSpawner : MonoBehaviourPunCallbacks
 {
     public GameObject[] playerPrefabs;
+    [Space]
     public Transform[] spawnPoints;
 
     private void Start()
@@ -13,15 +14,16 @@ public class PlayerSpawner : MonoBehaviour
 
         if (PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("playerCars"))
         {
-            int carIndex = (int)PhotonNetwork.LocalPlayer.CustomProperties["playerCars"];
-            if (carIndex >= 0 && carIndex < playerPrefabs.Length)
+            int playerIndex = (int)PhotonNetwork.LocalPlayer.CustomProperties["playerCars"];
+            if (playerIndex >= 0 && playerIndex < playerPrefabs.Length)
             {
-                GameObject playerToSpawn = playerPrefabs[carIndex];
-                PhotonNetwork.Instantiate(playerToSpawn.name, spawnPoint.position, Quaternion.identity);
+                GameObject playerToSpawn = playerPrefabs[playerIndex];
+                GameObject _player = PhotonNetwork.Instantiate(playerToSpawn.name, spawnPoint.position, Quaternion.identity);
+                _player.GetComponent<PlayerSetup>().IsLocalPlayer();
             }
             else
             {
-                Debug.LogError("Invalid player car index: " + carIndex);
+                Debug.LogError("Invalid player car index: " + playerIndex);
             }
         }
         else

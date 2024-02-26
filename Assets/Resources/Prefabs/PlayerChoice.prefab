@@ -537,4 +537,3 @@ MonoBehaviour:
   playerCars: {fileID: 3001579139789922680}
   avatars:
   - {fileID: 10807584, guid: d71e954afe348fe42a40a1b334599ad0, type: 3}
-  - {fileID: 5348164, guid: d71e954afe348fe42a40a1b334599ad0, type: 3}
